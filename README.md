@@ -1,9 +1,3 @@
-
-## Documentação
-
-https://app.swaggerhub.com/apis/PedroPCardoso/BibliotecaAPI/1.0.0
-
-
 ## Steps
 
 install ddev

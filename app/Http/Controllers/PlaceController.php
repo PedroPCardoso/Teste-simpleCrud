@@ -6,6 +6,7 @@ use App\Http\Requests\StorePlaceRequest;
 use App\Http\Requests\EditPlaceRequest;
 use App\Http\Requests\getPlaceRequest;
 use App\Repositories\PlaceRepository;
+use Illuminate\Http\JsonResponse;
 
 class PlaceController extends BaseController
 {
@@ -21,8 +22,11 @@ class PlaceController extends BaseController
 
     /**
      * Display a listing of the resource.
+     *
+     * @param getPlaceRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function index(getPlaceRequest $request)
+    public function index(getPlaceRequest $request): JsonResponse
     {
         $data = $this->placeRepos->allQuery($request->all())->get()->toArray();
         return $this->sendResponse($data, 'Todos os lugares encontrados');
@@ -30,8 +34,11 @@ class PlaceController extends BaseController
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param StorePlaceRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(StorePlaceRequest $request)
+    public function store(StorePlaceRequest $request): JsonResponse
     {
         $created = $this->placeRepos->create(
             [
@@ -48,8 +55,11 @@ class PlaceController extends BaseController
 
     /**
      * Display the specified resource.
+     *
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function show(string $id)
+    public function show(string $id): JsonResponse
     {
         $place = $this->placeRepos->find($id);
         if ($place) {
@@ -60,8 +70,12 @@ class PlaceController extends BaseController
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param EditPlaceRequest $request
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function update(EditPlaceRequest $request, $id)
+    public function update(EditPlaceRequest $request, $id): JsonResponse
     {
         $updated = $this->placeRepos->update($request->all(), $id);
         if ($updated) {

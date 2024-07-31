@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "7b5b2393-3186-4352-925a-babc96c302c1",
+		"name": "AirbnbSimple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1256655"
+	},
+	"item": [
+		{
+			"name": "getAllPlaces",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simplecrud.ddev.site/api/places?name=troca",
+					"protocol": "https",
+					"host": [
+						"simplecrud",
+						"ddev",
+						"site"
+					],
+					"path": [
+						"api",
+						"places"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "troca"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getIdPlace",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simplecrud.ddev.site/api/places/4",
+					"protocol": "https",
+					"host": [
+						"simplecrud",
+						"ddev",
+						"site"
+					],
+					"path": [
+						"api",
+						"places",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePlace",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "local bom4 4",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "Rondônia",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Alta Floresta D'Oeste",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://simplecrud.ddev.site/api/places",
+					"protocol": "https",
+					"host": [
+						"simplecrud",
+						"ddev",
+						"site"
+					],
+					"path": [
+						"api",
+						"places"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePlace",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "trocado",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://simplecrud.ddev.site/api/places/4",
+					"protocol": "https",
+					"host": [
+						"simplecrud",
+						"ddev",
+						"site"
+					],
+					"path": [
+						"api",
+						"places",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
