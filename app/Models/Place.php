@@ -17,7 +17,24 @@ class Place extends Model
      */
     protected $fillable = ['name', 'city_id', 'state_id'];
 
-    
+    /**
+     * The attributes that should be merged with the user object.
+     *
+     * @var array<string, string>
+     */
+    protected $with = ['city', 'state'];
+
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+
     protected static function boot()
     {
         parent::boot();
