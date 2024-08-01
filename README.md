@@ -18,3 +18,6 @@ ou
 
 trocar a url do arquivo de postman para o ip e porta que vai aparecer ao subir o sistema.
 
+## testes
+
+ddev artisan test
